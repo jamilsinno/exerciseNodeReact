@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import Button from './components/Button';
 import axios from 'axios';
 import Repos from './components/Repos';
 
@@ -6,6 +7,7 @@ import './App.css';
 
 export function App() {
   const [repo, setRepo] = useState([]);
+  const [lang, setLang] = useState("");
 
   useEffect(() => {
     // get the data from the backend api
@@ -22,6 +24,11 @@ export function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  return ( <ButtonEnglish />
-  <Repos repo={repo} />);
+  
+  return ( <>
+  <Button setLang={setLang} filteredLang={'English'}/>
+  <Button setLang={setLang} filteredLang={'French'}/>
+  <Button setLang={setLang} filteredLang={'TypeScript'}/>
+  <Repos repo={repo} lang={lang}/>
+  </>);
 }
