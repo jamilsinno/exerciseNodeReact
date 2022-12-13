@@ -1,8 +1,4 @@
-type RepoContent = {
-  created_at: string;
-  [key: string]: string | boolean | number | RepoContent;
-};
-
+import {RepoContent} from '../types';
 const Repos = ({repo}: {repo: RepoContent[]}): JSX.Element => {
 
   const sortedRepo = repo.sort((a: RepoContent, b: RepoContent) =>
