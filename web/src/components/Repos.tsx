@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+type RepoContent = {
+  created_at: string;
+  [key: string]: string | boolean | number | RepoContent;
+};
+
 const Repos = (): JSX.Element => {
   const [repo, setRepo] = useState([]);
 
@@ -19,11 +24,13 @@ const Repos = (): JSX.Element => {
       .catch((err) => console.log(err));
   }, []);
 
-  const sortedRepo = repo.sort((a: any, b: any) => b.created_at.localeCompare(a.created_at));
+  const sortedRepo = repo.sort((a: RepoContent, b: RepoContent) =>
+    b.created_at.localeCompare(a.created_at)
+  );
   return (
     <div>
       {sortedRepo.length &&
-        sortedRepo.map((r: any, i: number) => (
+        sortedRepo.map((r: RepoContent, i: number) => (
           <div key={i}>
             <p>{r.name}</p>
             <p>{r.description}</p>
