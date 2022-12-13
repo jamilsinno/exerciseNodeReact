@@ -17,14 +17,19 @@ const Repos = (): JSX.Element => {
     });
   }, []);
 
-  return <div>{repo.length && repo.map((r: any) => (
-  <>
-  <p>{r.name}</p>
-  <p>{r.description}</p>
-  <p>{r.language}</p>
-  <p>{r.forks_count}</p>
-  </>))}
-  </div>;
+  return (
+    <div>
+      {repo.length &&
+        repo.map((r: any) => (
+          <>
+            <p>{r.name}</p>
+            <p>{r.description}</p>
+            <p>{r.language}</p>
+            <p>{r.forks_count}</p>
+          </>
+        ))}
+    </div>
+  );
 };
 
 export default Repos;
