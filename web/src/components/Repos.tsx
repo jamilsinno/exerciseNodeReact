@@ -18,8 +18,8 @@ const Repos = ({
             if (lang) { return r.language === lang };
             return true;
           })
-          .map((r: RepoContent, i: number) => (
-            <Link to={`repos/${r.full_name}`} key={i}>
+          .map((r: RepoContent) => (
+            <Link to={`/${r.full_name}`} key={r.id}>
               <p>{r.name}</p>
               <p>{r.description}</p>
               <p>{r.language}</p>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Button from './components/Button';
 import axios from 'axios';
 import Repos from './components/Repos';
-// import Repo from './components/Repo';
+import Repo from './components/Repo';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import './App.css';
@@ -59,7 +59,7 @@ export function App() {
             </>
           }
         />
-        {/* <Route path="/:id" element={<Repo git={repo} setGit={setGit} />} /> */}
+        <Route path="/:id/:id2" element={<Repo/>} />
       </Routes>
     </Router>
   );
