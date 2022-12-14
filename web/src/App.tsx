@@ -10,7 +10,6 @@ import './App.css';
 export function App() {
   const [repo, setRepo] = useState([]);
   const [lang, setLang] = useState('');
-  // const [git, setGit] = useState([]);
 
   // Ping back end API to access all repos
   useEffect(() => {
