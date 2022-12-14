@@ -37,6 +37,7 @@ const newConfig = Object.assign({}, config, {
     'react/self-closing-comp': 'error',
     'react/no-string-refs': 'error',
     'constructor-super': 'error',
+    'prettier/prettier': ['error', { 'endOfLine': 'auto'}],
     curly: 'error',
     'dot-notation': 'error',
     'guard-for-in': 'error',

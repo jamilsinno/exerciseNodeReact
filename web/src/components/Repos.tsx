@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { RepoContent } from '../types';
 const Repos = ({
   repo,
@@ -15,11 +15,11 @@ const Repos = ({
       {sortedRepo.length &&
         sortedRepo
           .filter((r) => {
-            if (lang) return r.language === lang;
+            if (lang) { return r.language === lang };
             return true;
           })
           .map((r: RepoContent, i: number) => (
-            <Link key={i}>
+            <Link to={`repos/${r.full_name}`} key={i}>
               <p>{r.name}</p>
               <p>{r.description}</p>
               <p>{r.language}</p>
