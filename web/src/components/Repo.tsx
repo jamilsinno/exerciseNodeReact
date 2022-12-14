@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { RepoContent } from '../types';
 
+/* eslint-disable @typescript-eslint/naming-convention */
 const Repo = ({ repo }: { repo: RepoContent[] }): any => {
   const handle = useParams();
   const res = repo.filter((d) => d.full_name === handle.id + '/' + handle.id2);
