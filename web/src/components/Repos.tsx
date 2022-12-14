@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import { RepoContent } from '../types';
 const Repos = ({
   repo,
@@ -18,13 +19,13 @@ const Repos = ({
             return true;
           })
           .map((r: RepoContent, i: number) => (
-            <div key={i}>
+            <Link key={i}>
               <p>{r.name}</p>
               <p>{r.description}</p>
               <p>{r.language}</p>
               <p>{r.forks_count}</p>
               <p>{r.created_at}</p>
-            </div>
+            </Link>
           ))}
     </div>
   );
