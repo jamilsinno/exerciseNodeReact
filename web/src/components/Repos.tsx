@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { RepoContent } from '../types';
+
+/* eslint-disable @typescript-eslint/naming-convention */
 const Repos = ({
   repo,
   lang,
@@ -15,16 +17,17 @@ const Repos = ({
       {sortedRepo.length &&
         sortedRepo
           .filter((r) => {
-            if (lang) { return r.language === lang };
+            if (lang) {
+              return r.language === lang;
+            }
             return true;
           })
           .map((r: RepoContent) => (
             <Link to={`/${r.full_name}`} key={r.id}>
-              <p>{r.name}</p>
-              <p>{r.description}</p>
-              <p>{r.language}</p>
-              <p>{r.forks_count}</p>
-              <p>{r.created_at}</p>
+              <p>Name: {r.name}</p>
+              <p>Description: {r.description}</p>
+              <p>Language: {r.language}</p>
+              <p>Fork count: {r.forks_count}</p>
             </Link>
           ))}
     </div>
