@@ -28,23 +28,6 @@ export function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  // useEffect to ping git API to get single repo info
-  // useEffect(() => {
-  //   const url = async () => {
-  //     const res = await axios.get(
-  //       `https://raw.githubusercontent.com/${git.full_name}/master/README.md`
-  //     );
-  //     return res;
-  //   };
-
-  //   // call the function to get the singular repo information
-  //   url()
-  //     .then((data) => {
-  //       setGit(data.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
-
   return (
     <Router>
       <Routes>
@@ -59,7 +42,7 @@ export function App() {
             </>
           }
         />
-        <Route path="/:id/:id2" element={<Repo repo={repo}/>} />
+        <Route path="/:id/:id2" element={<Repo repo={repo} />} />
       </Routes>
     </Router>
   );
