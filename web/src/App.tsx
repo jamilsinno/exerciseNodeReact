@@ -59,7 +59,7 @@ export function App() {
             </>
           }
         />
-        <Route path="/:id/:id2" element={<Repo/>} />
+        <Route path="/:id/:id2" element={<Repo repo={repo}/>} />
       </Routes>
     </Router>
   );
